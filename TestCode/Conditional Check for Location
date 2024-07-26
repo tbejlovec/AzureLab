@@ -15,3 +15,17 @@
     "max_tokens": 100
   }
 }
+
+
+{
+  "method": "POST",
+  "uri": "https://api.openai.com/v1/engines/davinci-codex/completions",
+  "headers": {
+    "Authorization": "Bearer YOUR_OPENAI_API_KEY",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "prompt": "Generate a friendly opening message for a soccer game at lunch today. Make it engaging, friendly and relate to specific holidays, weekend coming up or that just passed @{variables('DayOfWeek')}. Occasionally mention Taco Tuesday if it's a Tuesday or happy its Friday if the weekend is coming up. Try to keep it to one or two lines. Don't be too excitable. Don't mention the weekend unless it's Friday. Include the Temperature and Weather at the bottom separately for Stuttgart at @{variables('TimeOfDay')}.\n\nTemperature: @{outputs('Parse_JSON')?['main']['temp']}°C\nWeather: @{outputs('Parse_JSON')?['weather'][0]['description']}",
+    "max_tokens": 100
+  }
+}
