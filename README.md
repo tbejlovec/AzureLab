@@ -57,7 +57,7 @@ Location: @{variables('Location')}
 Special Message: @{variables('SpecialMessage')}
 ####
 ```
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <details>
   <summary><h2> Managing Distribution List</h2> </summary>
   
@@ -104,5 +104,56 @@ We could not process your request. Please ensure you are using the correct forma
 - To remove an email, use the subject: REMOVE:email@example.com
 
 Please resend your email with the correct format.
-  
+```  
+</details>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<details>
+  <summary><h2>OpenAI API Integration</h2> </summary>
+#### Summary
+**Objective**: Integrate OpenAI API to generate dynamic motivational messages.
+
+**Components**:
+- HTTP action to call OpenAI API
+- Parse JSON action to extract response
+- Set variable for `DynamicMessage`
+
+#### Steps
+
+**HTTP Action**:
+- Method: POST
+- URI: `https://api.openai.com/v1/engines/davinci-codex/completions`
+- Headers:
+  - Authorization: Bearer YOUR_API_KEY
+  - Content-Type: application/json
+- Body:
+  ```json
+  {
+    "prompt": "Generate a motivational message for a soccer game. Make it engaging and friendly.",
+    "max_tokens": 50
+  }
+
+
+**HTTP Action**:
+- Extract the Response
+```
+  {
+  "type": "object",
+  "properties": {
+    "choices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 </details>
