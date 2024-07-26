@@ -1,0 +1,18 @@
+{
+  "type": "OpenApiConnection",
+  "inputs": {
+    "parameters": {
+      "emailMessage/To": "chief@patch-soccer.com",
+      "emailMessage/Subject": "Lunchtime Soccer- @{variables('FormattedDate')} - @{variables('Location')} @{variables('GameTime')}",
+      "emailMessage/Body": "<p>@{outputs('Format_Message')}</p><br><p>@{variables('BodyMessage')}</p><br>",
+      "emailMessage/Cc": "Travisbejlovec@gmail.com",
+      "emailMessage/Importance": "Normal"
+    },
+    "host": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+      "connection": "shared_office365",
+      "operationId": "SendEmailV2"
+    }
+  },
+  "runAfter": { "Set_DynamicMessage": ["Succeeded"] }
+}
