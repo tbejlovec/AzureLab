@@ -1,0 +1,5 @@
+{
+  "type": "Compose",
+  "inputs": "@body('Parse_Outdoor_Prompt_in_Plain_Text')['message']",
+  "runAfter": { "Parse_Outdoor_Prompt_in_Plain_Text": ["Succeeded"] }
+}
