@@ -1,0 +1,15 @@
+{
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant designed to output JSON."
+    },
+    {
+      "role": "user",
+      "content": "Generate a friendly opening message for a soccer game at lunch today. Make it engaging, friendly and relate to specific holidays, weekend coming up or that just passed @{variables('DayOfWeek')}. Occasionally mention Taco Tuesday if it's a Tuesday or happy its Friday if the weekend is coming up. Try to keep it to one or two lines. Don't be too excitable. Don't mention the weekend unless it's Friday. Include the Temperature and Weather at the bottom separately for Stuttgart at @{variables('GameTime')}.\n\nTemperature: @{outputs('Parse_JSON')?['main']['temp']}°C\nWeather: @{outputs('Parse_JSON')?['weather'][0]['description']}"
+    }
+  ],
+  "max_tokens": 200,
+  "temperature": 0.7
+}
