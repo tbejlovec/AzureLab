@@ -1,41 +1,37 @@
-
-### Note 2: Managing Distribution List
+## Note 2: Managing Distribution List
 
 #### Summary
-**Objective**: Dynamically manage the distribution list via email commands.
-
-**Components**:
-- Handling admin commands to add or remove emails
-- Sending assistance emails for unrecognized commands
+- **Objective**: Dynamically manage the distribution list via email commands.
+- **Components**:
+  - Handling admin commands to add or remove emails
+  - Sending assistance emails for unrecognized commands
 
 #### Steps
+1. **Add Email Address**:
+    - Condition to check if the email subject starts with `ADD:`
+    - Extract email address
+    - Add the email address to the Excel sheet
+    - Send confirmation email to the sender
 
-**Add Email Address**:
-- Condition to check if the email subject starts with `ADD:`
-- Extract email address
-- Add the email address to the Excel sheet
-- Send confirmation email to the sender
+2. **Remove Email Address**:
+    - Condition to check if the email subject starts with `REMOVE:`
+    - Extract email address
+    - List rows in the Excel sheet
+    - Delete the row where the email matches
+    - Send confirmation email to the sender
 
-**Remove Email Address**:
-- Condition to check if the email subject starts with `REMOVE:`
-- Extract email address
-- List rows in the Excel sheet
-- Delete the row where the email matches
-- Send confirmation email to the sender
-
-**Assistance Email**:
-- Default case for unrecognized commands
-- Send a troubleshooting email with instructions
+3. **Assistance Email**:
+    - Default case for unrecognized commands
+    - Send a troubleshooting email with instructions
 
 #### Example Email Commands
+- **Add Email Command**:
+  - Subject: `ADD:email1@example.com`
+  - Body: `Please add this email to the distribution list.`
 
-**Add Email Command**:
-- Subject: `ADD:email1@example.com`
-- Body: `Please add this email to the distribution list.`
-
-**Remove Email Command**:
-- Subject: `REMOVE:email1@example.com`
-- Body: `Please remove this email from the distribution list.`
+- **Remove Email Command**:
+  - Subject: `REMOVE:email1@example.com`
+  - Body: `Please remove this email from the distribution list.`
 
 #### Example Assistance Email
 ```plaintext
