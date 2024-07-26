@@ -1,0 +1,5 @@
+{
+  "type": "Compose",
+  "inputs": "concat(body('Parse_Outdoor_Prompt_in_Plain_Text')['message'], '<br><br>- ', body('Parse_Outdoor_Prompt_in_Plain_Text')['temperature'], ' & ', body('Parse_Outdoor_Prompt_in_Plain_Text')['weather'])",
+  "runAfter": { "Parse_Outdoor_Prompt_in_Plain_Text": ["Succeeded"] }
+}
