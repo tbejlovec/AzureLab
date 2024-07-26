@@ -55,3 +55,5 @@ Time: @{variables('GameTime')}
 Location: @{variables('Location')}
 
 Special Message: @{variables('SpecialMessage')}
+####
+
