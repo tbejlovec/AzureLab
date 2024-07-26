@@ -1,0 +1,8 @@
+{
+  "type": "SetVariable",
+  "inputs": {
+    "name": "DynamicMessage",
+    "value": "@outputs('Format_Message')"
+  },
+  "runAfter": { "Format_Message": ["Succeeded"] }
+}
