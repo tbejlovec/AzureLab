@@ -1,0 +1,17 @@
+{
+  "condition": "@equals(variables('Location'), 'indoor')"
+}
+
+
+{
+  "method": "POST",
+  "uri": "https://api.openai.com/v1/engines/davinci-codex/completions",
+  "headers": {
+    "Authorization": "Bearer YOUR_OPENAI_API_KEY",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "prompt": "Generate a friendly opening message for a soccer game at lunch today. Make it engaging and friendly. Relate to specific holidays, weekend coming up, or that just passed @{variables('DayOfWeek')}. Occasionally mention Taco Tuesday if it's a Tuesday or happy its Friday if the weekend is coming up. Try to keep it to one or two lines. Don't be too excitable. Don't mention the weekend unless it's Friday. Note that the game is indoors today.\n\n",
+    "max_tokens": 100
+  }
+}
