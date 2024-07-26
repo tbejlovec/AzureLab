@@ -1,0 +1,5 @@
+{
+  "type": "Compose",
+  "inputs": "@first(body('Parse_Outdoor_Prompt')?['choices'])['message']['content']",
+  "runAfter": { "Parse_Outdoor_Prompt": ["Succeeded"] }
+}
