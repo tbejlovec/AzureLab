@@ -1,0 +1,37 @@
+{
+  "method": "GET",
+  "uri": "https://api.openweathermap.org/data/2.5/weather?q=Stuttgart,de&units=metric&appid=YOUR_API_KEY",
+  "headers": {}
+}
+
+
+{
+  "content": "@{body('HTTP')}",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "weather": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "main": {
+        "type": "object",
+        "properties": {
+          "temp": {
+            "type": "number"
+          }
+        }
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  }
+}
