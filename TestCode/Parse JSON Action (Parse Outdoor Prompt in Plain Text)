@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "message": { "type": "string" },
+    "temperature": { "type": "string" },
+    "weather": { "type": "string" }
+  }
+}
